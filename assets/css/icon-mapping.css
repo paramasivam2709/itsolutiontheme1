@@ -1,0 +1,148 @@
+/* Font Awesome Icon Mapping for Stackly Icons */
+/* This file maps custom tji-* icon classes to Font Awesome equivalents */
+
+/* Override font-family for all tji- classes to use Font Awesome */
+[class^="tji-"], [class*=" tji-"] {
+  font-family: 'Font Awesome 6 Free' !important;
+  font-weight: 900;
+  font-style: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Social Icons - use Font Awesome Brands */
+.tji-facebook::before { content: "\f39e"; font-family: 'Font Awesome 6 Brands' !important; }
+.tji-linkedin::before { content: "\f08c"; font-family: 'Font Awesome 6 Brands' !important; }
+.tji-instagram::before { content: "\f16d"; font-family: 'Font Awesome 6 Brands' !important; }
+.tji-x-twitter::before { content: "\f534"; font-family: 'Font Awesome 6 Brands' !important; }
+.tji-youtube::before { content: "\f167"; font-family: 'Font Awesome 6 Brands' !important; }
+.tji-github::before { content: "\f09b"; font-family: 'Font Awesome 6 Brands' !important; }
+.tji-telegram::before { content: "\f2c6"; font-family: 'Font Awesome 6 Brands' !important; }
+.tji-whatsapp::before { content: "\f232"; font-family: 'Font Awesome 6 Brands' !important; }
+.tji-pinterest::before { content: "\f0d2"; font-family: 'Font Awesome 6 Brands' !important; }
+.tji-twitter::before { content: "\f1da"; font-family: 'Font Awesome 6 Brands' !important; }
+.tji-messenger::before { content: "\f39f"; font-family: 'Font Awesome 6 Brands' !important; }
+
+/* Navigation & Arrow Icons */
+.tji-arrow-right-2::before { content: "\f061"; }
+.tji-arrow-left-2::before { content: "\f060"; }
+.tji-arrow-right-3::before { content: "\f061"; }
+.tji-arrow-left-3::before { content: "\f060"; }
+.tji-arrow-right-4::before { content: "\f061"; }
+.tji-arrow-left-4::before { content: "\f060"; }
+.tji-arrow-up-4::before { content: "\f062"; }
+.tji-arrow-down-4::before { content: "\f063"; }
+.tji-arrow-right::before { content: "\f061"; }
+.tji-arrow-left::before { content: "\f060"; }
+.tji-arrow-up::before { content: "\f062"; }
+.tji-arrow-down::before { content: "\f063"; }
+.tji-arrow-bold-right::before { content: "\f061"; }
+.tji-arrow-bold-left::before { content: "\f060"; }
+
+/* Search & Menu */
+.tji-search::before { content: "\f002"; }
+.tji-menu::before { content: "\f0c9"; }
+
+/* Check Icons */
+.tji-check::before { content: "\f058"; }
+.tji-check-2::before { content: "\f058"; }
+.tji-check-3::before { content: "\f058"; }
+.tji-check-4::before { content: "\f058"; }
+.tji-x-mark::before { content: "\f057"; }
+.tji-plus::before { content: "\f067"; }
+.tji-minus::before { content: "\f068"; }
+
+/* Communication */
+.tji-phone::before { content: "\f095"; }
+.tji-phone-2::before { content: "\f095"; }
+.tji-phone-3::before { content: "\f095"; }
+.tji-envelop::before { content: "\f0e0"; }
+.tji-envelop-2::before { content: "\f0e0"; }
+.tji-chat::before { content: "\f086"; }
+.tji-comment::before { content: "\f075"; }
+
+/* Location & Map */
+.tji-location::before { content: "\f041"; }
+.tji-location-2::before { content: "\f041"; }
+.tji-globe::before { content: "\f0ac"; }
+
+/* Business & Statistics */
+.tji-chart::before { content: "\f080"; }
+.tji-chart-2::before { content: "\f080"; }
+.tji-growth::before { content: "\f077"; }
+.tji-percent::before { content: "\f295"; }
+.tji-budget::before { content: "\f53b"; }
+.tji-award::before { content: "\f559"; }
+.tji-trophy::before { content: "\f091"; }
+
+/* Technology & Development */
+.tji-server::before { content: "\f233"; }
+.tji-cloud::before { content: "\f0c2"; }
+.tji-cloud-2::before { content: "\f0c2"; }
+.tji-development::before { content: "\f121"; }
+.tji-computer::before { content: "\f109"; }
+.tji-network::before { content: "\f6ff"; }
+.tji-window::before { content: "\f338"; }
+.tji-gear::before { content: "\f013"; }
+.tji-shield::before { content: "\f132"; }
+.tji-security::before { content: "\f132"; }
+.tji-cybersecurity::before { content: "\f132"; }
+.tji-download::before { content: "\f019"; }
+.tji-rocket::before { content: "\f135"; }
+.tji-idea::before { content: "\f0eb"; }
+.tji-play::before { content: "\f04b"; }
+
+/* Time & Calendar */
+.tji-clock::before { content: "\f017"; }
+.tji-clock-2::before { content: "\f017"; }
+.tji-calendar::before { content: "\f133"; }
+.tji-bell::before { content: "\f0f3"; }
+.tji-bell-2::before { content: "\f0f3"; }
+
+/* User & Team */
+.tji-user::before { content: "\f007"; }
+.tji-team::before { content: "\f0c0"; }
+.tji-hand::before { content: "\f0a8"; }
+.tji-hand-2::before { content: "\f0a8"; }
+.tji-thumbs-up::before { content: "\f164"; }
+
+/* Status & Ratings */
+.tji-star::before { content: "\f005"; }
+.tji-trust::before { content: "\f058"; }
+
+/* Text & Utility */
+.tji-quote::before { content: "\f10d"; }
+.tji-quote-2::before { content: "\f10d"; }
+.tji-home::before { content: "\f015"; }
+.tji-speed-meter::before { content: "\f0e4"; }
+.tji-share::before { content: "\f1e0"; }
+
+/* Subtitle decorative icons */
+.tji-subtitle::before { content: ""; }
+.tji-subtitle-2::before { content: ""; }
+.tji-subtitle-3::before { content: ""; }
+.tji-subtitle-4::before { content: ""; }
+.tji-subtitle-5::before { content: ""; }
+
+/* Additional icons */
+.tji-plane::before { content: "\f072"; }
+.tji-marquee::before { content: "\f0b0"; }
+.tji-marquee-2::before { content: "\f0b0"; }
+.tji-consulting::before { content: "\f0ad"; }
+.tji-spark::before { content: "\f0e7"; }
+
+/* Dropdown menu arrow - override for pseudo-elements */
+.mainmenu ul > li.menu-item-has-children > a::after,
+.mainmenu ul > li.has-dropdown > a::after {
+  font-family: 'Font Awesome 6 Free' !important;
+  font-weight: 900;
+  content: "\f078" !important;
+  display: inline-block;
+  font-style: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
