@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Login to Stackly - Innovative IT Solution" />
+
+    <!-- Site Title -->
+    <title>Login - Stackly</title>
+
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav.png" />
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/nice-select.css" />
+    <link rel="stylesheet" href="assets/css/swiper.min.css" />
+    <link rel="stylesheet" href="assets/css/venobox.min.css" />
+    <link rel="stylesheet" href="assets/css/meanmenu.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/icon-mapping.css" />
+    <style>
+      .auth-container {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, var(--tj-color-theme-dark) 0%, #1a1a1a 100%);
+        padding: 20px;
+      }
+
+      .auth-wrapper {
+        width: 100%;
+        max-width: 450px;
+        background: var(--tj-color-theme-bg);
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--tj-color-border-1);
+      }
+
+      .auth-header {
+        text-align: center;
+        margin-bottom: 35px;
+      }
+
+      .auth-header h1 {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: var(--tj-color-heading-primary);
+      }
+
+      .auth-header p {
+        color: var(--tj-color-text-body-2);
+        font-size: 14px;
+      }
+
+      .form-group {
+        margin-bottom: 25px;
+      }
+
+      .form-group label {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 8px;
+        color: var(--tj-color-heading-primary);
+        font-size: 14px;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid var(--tj-color-border-1);
+        border-radius: 8px;
+        background-color: var(--tj-color-theme-dark);
+        color: var(--tj-color-heading-primary);
+        font-size: 14px;
+        transition: all 0.3s ease;
+      }
+
+      .form-group input:focus {
+        outline: none;
+        border-color: var(--tj-color-theme-primary);
+        box-shadow: 0 0 0 3px rgba(var(--tj-color-rgb-primary), 0.1);
+      }
+
+      .form-group input::placeholder {
+        color: var(--tj-color-text-body-2);
+      }
+
+      .form-group.has-error input {
+        border-color: #dc3545;
+      }
+
+      .error-message {
+        color: #dc3545;
+        font-size: 13px;
+        margin-top: 5px;
+        display: none;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .error-message.show {
+        display: flex;
+      }
+
+      .form-group.has-error .error-message {
+        display: flex;
+      }
+
+      .form-check {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+      }
+
+      .form-check input {
+        width: 18px;
+        height: 18px;
+        border: 1px solid var(--tj-color-border-1);
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 8px;
+        background-color: var(--tj-color-theme-dark);
+        accent-color: var(--tj-color-theme-primary);
+      }
+
+      .form-check label {
+        margin: 0;
+        font-size: 14px;
+        cursor: pointer;
+        color: var(--tj-color-text-body-2);
+      }
+
+      .forgot-password {
+        text-align: right;
+        margin-bottom: 25px;
+      }
+
+      .forgot-password a {
+        color: var(--tj-color-theme-primary);
+        font-size: 14px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .forgot-password a:hover {
+        text-decoration: underline;
+      }
+
+      .submit-btn {
+        width: 100%;
+        padding: 14px;
+        background: var(--tj-color-theme-primary);
+        color: var(--tj-color-theme-dark);
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .submit-btn:hover {
+        background: var(--tj-color-theme-primary);
+        opacity: 0.9;
+        transform: translateY(-2px);
+      }
+
+      .submit-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+
+      .auth-footer {
+        text-align: center;
+        margin-top: 25px;
+      }
+
+      .auth-footer p {
+        color: var(--tj-color-text-body-2);
+        font-size: 14px;
+      }
+
+      .auth-footer a {
+        color: var(--tj-color-theme-primary);
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .auth-footer a:hover {
+        text-decoration: underline;
+      }
+
+      .logo-section {
+        text-align: center;
+        margin-bottom: 35px;
+      }
+
+      .logo-section img {
+        height: 40px;
+        width: auto;
+      }
+
+      .success-message {
+        background-color: #d4edda;
+        border: 1px solid #c3e6cb;
+        color: #155724;
+        padding: 12px 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        display: none;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .success-message.show {
+        display: flex;
+      }
+
+      @media (max-width: 575px) {
+        .auth-wrapper {
+          padding: 25px;
+        }
+
+        .auth-header h1 {
+          font-size: 24px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="auth-container">
+      <div class="auth-wrapper">
+        <div class="logo-section">
+          <a href="index.html" class="logo">
+            <img src="assets/images/logos/primary-logo.webp.png" alt="Stackly Logo" />
+          </a>
+        </div>
+
+        <div class="auth-header">
+          <h1>Login</h1>
+          <p>Welcome back! Please login to your account</p>
+        </div>
+
+        <form id="loginForm" novalidate>
+          <div class="success-message" id="successMessage">
+            <i class="fas fa-check-circle"></i>
+            <span id="successText"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address <span style="color: #dc3545;">*</span></label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              placeholder="Enter your email" 
+              required
+            />
+            <div class="error-message">
+              <i class="fas fa-exclamation-circle"></i>
+              <span>Please enter a valid email address</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password <span style="color: #dc3545;">*</span></label>
+            <input 
+              type="password" 
+              id="password" 
+              name="password" 
+              placeholder="Enter your password" 
+              required
+            />
+            <div class="error-message">
+              <i class="fas fa-exclamation-circle"></i>
+              <span>Password is required (minimum 6 characters)</span>
+            </div>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" id="remember" name="remember" />
+            <label for="remember">Remember me</label>
+          </div>
+
+          <div class="forgot-password">
+            <a href="forgot-password.html">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="submit-btn">Login</button>
+        </form>
+
+        <div class="auth-footer">
+          <p>Don't have an account? <a href="register.html">Sign up here</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS here -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const loginForm = document.getElementById('loginForm');
+      const emailInput = document.getElementById('email');
+      const passwordInput = document.getElementById('password');
+      const successMessage = document.getElementById('successMessage');
+      const successText = document.getElementById('successText');
+
+      function showError(input) {
+        const formGroup = input.closest('.form-group');
+        formGroup.classList.add('has-error');
+      }
+
+      function hideError(input) {
+        const formGroup = input.closest('.form-group');
+        formGroup.classList.remove('has-error');
+      }
+
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      }
+
+      function validateForm() {
+        let isValid = true;
+
+        // Validate email
+        if (!emailInput.value.trim()) {
+          showError(emailInput);
+          isValid = false;
+        } else if (!validateEmail(emailInput.value)) {
+          showError(emailInput);
+          isValid = false;
+        } else {
+          hideError(emailInput);
+        }
+
+        // Validate password
+        if (!passwordInput.value.trim()) {
+          showError(passwordInput);
+          isValid = false;
+        } else if (passwordInput.value.length < 6) {
+          showError(passwordInput);
+          isValid = false;
+        } else {
+          hideError(passwordInput);
+        }
+
+        return isValid;
+      }
+
+      loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        if (validateForm()) {
+          // Show success message
+          successText.textContent = 'Login successful! Redirecting...';
+          successMessage.classList.add('show');
+
+          // Set session
+          sessionStorage.setItem('userLoggedIn', 'true');
+          sessionStorage.setItem('userEmail', emailInput.value);
+
+          // Simulate successful login
+          setTimeout(() => {
+            window.location.href = 'dashboard.html';
+          }, 1500);
+        }
+      });
+
+      // Real-time validation
+      emailInput.addEventListener('blur', function() {
+        if (this.value.trim() && !validateEmail(this.value)) {
+          showError(this);
+        } else if (this.value.trim()) {
+          hideError(this);
+        }
+      });
+
+      passwordInput.addEventListener('blur', function() {
+        if (this.value.trim() && this.value.length < 6) {
+          showError(this);
+        } else if (this.value.trim()) {
+          hideError(this);
+        }
+      });
+    </script>
+  </body>
+</html>
