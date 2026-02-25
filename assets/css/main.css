@@ -20595,16 +20595,4 @@ START: Hero CSS
 
 /* !END: Hero CSS */
 
-/* Logo Color Styling - Lime Green */
-.logo img,
-.tj_footer_bottom_logo img {
-  filter: saturate(1.8) hue-rotate(65deg) brightness(1.15) contrast(1.15);
-  transition: filter 0.3s ease;
-}
-
-.logo img:hover,
-.tj_footer_bottom_logo img:hover {
-  filter: saturate(2) hue-rotate(65deg) brightness(1.25) contrast(1.2);
-}
-
 /*# sourceMappingURL=main.css.map */
