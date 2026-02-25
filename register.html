@@ -91,6 +91,9 @@
         color: var(--tj-color-text-body-2);
       }
 
+      .password-wrapper{position:relative}
+      .password-toggle{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--tj-color-text-body-2);cursor:pointer;padding:4px}
+
       .form-group.has-error input {
         border-color: #dc3545;
       }
@@ -230,6 +233,10 @@
           </a>
         </div>
 
+        <div class="back-home" style="text-align:right;margin-bottom:14px;">
+          <a href="index.html" class="tj-text-btn"><span>Back to Home</span></a>
+        </div>
+
         <div class="auth-header">
           <h1>Register</h1>
           <p>Create your account to get started</p>
@@ -273,13 +280,18 @@
 
           <div class="form-group">
             <label for="reg_password">Password <span style="color: #dc3545;">*</span></label>
-            <input 
-              type="password" 
-              id="reg_password" 
-              name="password" 
-              placeholder="Enter your password" 
-              required
-            />
+            <div class="password-wrapper">
+              <input 
+                type="password" 
+                id="reg_password" 
+                name="password" 
+                placeholder="Enter your password" 
+                required
+              />
+              <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
             <div class="error-message">
               <i class="fas fa-exclamation-circle"></i>
               <span>Password must be at least 6 characters</span>
@@ -288,13 +300,18 @@
 
           <div class="form-group">
             <label for="confirm_password">Confirm Password <span style="color: #dc3545;">*</span></label>
-            <input 
-              type="password" 
-              id="confirm_password" 
-              name="confirm_password" 
-              placeholder="Confirm your password" 
-              required
-            />
+            <div class="password-wrapper">
+              <input 
+                type="password" 
+                id="confirm_password" 
+                name="confirm_password" 
+                placeholder="Confirm your password" 
+                required
+              />
+              <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
             <div class="error-message">
               <i class="fas fa-exclamation-circle"></i>
               <span>Passwords do not match</span>
@@ -414,7 +431,7 @@
 
           // Simulate successful registration
           setTimeout(() => {
-            window.location.href = 'login.html';
+            window.location.href = '404.html';
           }, 1500);
         }
       });
@@ -452,6 +469,27 @@
           hideError(this);
         }
       });
+
+      // Password toggles (works for both password fields)
+      (function () {
+        var toggles = document.querySelectorAll('.password-toggle');
+        toggles.forEach(function (toggle) {
+          var wrapper = toggle.closest('.password-wrapper');
+          if (!wrapper) return;
+          var input = wrapper.querySelector('input');
+          toggle.addEventListener('click', function () {
+            if (input.type === 'password') {
+              input.type = 'text';
+              this.querySelector('i').classList.remove('fa-eye');
+              this.querySelector('i').classList.add('fa-eye-slash');
+            } else {
+              input.type = 'password';
+              this.querySelector('i').classList.remove('fa-eye-slash');
+              this.querySelector('i').classList.add('fa-eye');
+            }
+          });
+        });
+      })();
     </script>
   </body>
 </html>
