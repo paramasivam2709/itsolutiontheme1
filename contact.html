@@ -22,6 +22,21 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/icon-mapping.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      #map {
+        width: 100%;
+        height: 400px;
+        border-radius: 8px;
+      }
+      #full-map {
+        width: 100%;
+        height: 500px;
+        border-radius: 8px;
+      }
+      .map-area, .map-area-full {
+        width: 100%;
+      }
+    </style>
   </head>
 
   <body>
@@ -57,7 +72,7 @@
           <div class="hamburger_top d-flex align-items-center justify-content-between">
             <div class="hamburger_logo">
               <a href="index.html" class="mobile_logo">
-                <img src="assets/images/logos/primary-logo.webp.png" alt="Logo" />
+                <img src="assets/images/logos/praimary-logo.webp" alt="Logo" />
               </a>
             </div>
             <div class="hamburger_close">
@@ -130,7 +145,7 @@
           <div class="hamburger_top d-flex align-items-center justify-content-between">
             <div class="hamburger_logo">
               <a href="index.html" class="mobile_logo">
-                <img src="assets/images/logos/primary-logo.webp.png" alt="Logo" />
+                <img src="assets/images/logos/praimary-logo.webp" alt="Logo" />
               </a>
             </div>
             <div class="hamburger_close">
@@ -227,7 +242,7 @@
               <div class="header-wrapper">
                 <!-- site logo -->
                 <div class="site_logo">
-                  <a class="logo" href="index.html"><img src="assets/images/logos/primary-logo.webp.png" alt="Logo" /></a>
+                  <a class="logo" href="index.html"><img src="assets/images/logos/praimary-logo.webp" alt="Logo" /></a>
                 </div>
 
                 <!-- navigation -->
@@ -260,6 +275,7 @@
                       </li>
                       <li><a href="contact.html">Contact</a></li>
                       <li><a href="dashboard.html">Dashboard</a></li>
+                      <li class="d-block d-md-none"><a href="login.html">Login</a></li>
                     </ul>
                   </nav>
                 </div>
@@ -271,7 +287,7 @@
                       <i class="tji-search"></i>
                     </button>
                   </div>
-                  <div class="header-button d-xl-block d-none">
+                <div class="header-button d-md-block d-none">
                     <a class="tj-primary-btn" href="login.html">
                       <span class="btn-text"><span>Log In</span></span>
                       <span class="btn-icon"><i class="tji-arrow-right-2"></i></span>
@@ -314,7 +330,7 @@
               <div class="header-wrapper">
                 <!-- site logo -->
                 <div class="site_logo">
-                  <a class="logo" href="index.html"><img src="assets/images/logos/primary-logo.webp.png" alt="Logo" /></a>
+                  <a class="logo" href="index.html"><img src="assets/images/logos/praimary-logo.webp" alt="Logo" /></a>
                 </div>
 
                 <!-- navigation -->
@@ -551,6 +567,20 @@
           </section>
           <!-- end: Contact Section -->
 
+          <!-- start: Map Section -->
+          <section class="tj-map-section">
+            <div class="container-fluid p-0">
+              <div class="row g-0">
+                <div class="col-12">
+                  <div class="map-area-full">
+                    <div id="full-map" style="width: 100%; height: 500px;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- end: Map Section -->
+
           <!-- start: Cta Section -->
           <section class="tj-cta-section">
             <div class="container">
@@ -607,7 +637,7 @@
                     <div class="footer-widget footer-col-1">
                       <div class="footer-logo">
                         <a href="index.html">
-                          <img src="assets/images/logos/primary-logo.webp.png" alt="Logo" />
+                          <img src="assets/images/logos/praimary-logo.webp" alt="Logo" />
                         </a>
                       </div>
                       <div class="footer-text">
@@ -727,5 +757,65 @@
     <script src="assets/js/leaflet.js"></script>
     <script src="assets/js/gsap-animation.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgwH2txKSYUz_B4dGqxMwQCxCJXU3BsKQ"></script>
+    <script>
+      // Initialize Contact Form Map
+      function initContactMap() {
+        const location = { lat: 11.1471, lng: 78.1441 };
+        const map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: location,
+          mapTypeControl: true,
+          fullscreenControl: true,
+          streetViewControl: true
+        });
+        
+        const marker = new google.maps.Marker({
+          position: location,
+          map: map,
+          title: 'MMR complex chinnathirupathu salem 636008'
+        });
+
+        const infowindow = new google.maps.InfoWindow({
+          content: '<div><strong>Our Location</strong><p>MMR complex<br>Chinnathirupathu<br>Salem 636008</p></div>'
+        });
+        
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+      }
+
+      // Initialize Full Width Map
+      function initFullMap() {
+        const location = { lat: 11.1471, lng: 78.1441 };
+        const fullMap = new google.maps.Map(document.getElementById('full-map'), {
+          zoom: 15,
+          center: location,
+          mapTypeControl: true,
+          fullscreenControl: true,
+          streetViewControl: true
+        });
+        
+        const marker = new google.maps.Marker({
+          position: location,
+          map: fullMap,
+          title: 'MMR complex chinnathirupathu salem 636008'
+        });
+
+        const infowindow = new google.maps.InfoWindow({
+          content: '<div><strong>Our Location</strong><p>MMR complex<br>Chinnathirupathu<br>Salem 636008</p></div>'
+        });
+        
+        marker.addListener('click', function() {
+          infowindow.open(fullMap, marker);
+        });
+      }
+
+      // Initialize maps when page loads
+      document.addEventListener('DOMContentLoaded', function() {
+        initContactMap();
+        initFullMap();
+      });
+    </script>
   </body>
 </html>
