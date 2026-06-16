@@ -36,6 +36,13 @@
       .map-area, .map-area-full {
         width: 100%;
       }
+      .map-area iframe, .map-area-full iframe {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        border-radius: inherit;
+      }
     </style>
   </head>
 
@@ -559,7 +566,15 @@
                 </div>
                 <div class="col-lg-6">
                   <div class="map-area tj-fade-anim" data-delay="0.5">
-                    <div id="map"></div>
+                    <div id="map">
+                      <iframe
+                        title="Stackly location map"
+                        src="https://www.google.com/maps?q=MMR%20complex%20Chinnathirupathu%20Salem%20636008&output=embed"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        allowfullscreen>
+                      </iframe>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -567,19 +582,6 @@
           </section>
           <!-- end: Contact Section -->
 
-          <!-- start: Map Section -->
-          <section class="tj-map-section">
-            <div class="container-fluid p-0">
-              <div class="row g-0">
-                <div class="col-12">
-                  <div class="map-area-full">
-                    <div id="full-map" style="width: 100%; height: 500px;"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- end: Map Section -->
 
           <!-- start: Cta Section -->
           <section class="tj-cta-section">
@@ -756,65 +758,5 @@
     <script src="assets/js/meanmenu.js"></script>
     <script src="assets/js/gsap-animation.js"></script>
     <script src="assets/js/main.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgwH2txKSYUz_B4dGqxMwQCxCJXU3BsKQ"></script>
-    <script>
-      // Initialize Contact Form Map
-      function initContactMap() {
-        const location = { lat: 11.1471, lng: 78.1441 };
-        const map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 15,
-          center: location,
-          mapTypeControl: true,
-          fullscreenControl: true,
-          streetViewControl: true
-        });
-        
-        const marker = new google.maps.Marker({
-          position: location,
-          map: map,
-          title: 'MMR complex chinnathirupathu salem 636008'
-        });
-
-        const infowindow = new google.maps.InfoWindow({
-          content: '<div><strong>Our Location</strong><p>MMR complex<br>Chinnathirupathu<br>Salem 636008</p></div>'
-        });
-        
-        marker.addListener('click', function() {
-          infowindow.open(map, marker);
-        });
-      }
-
-      // Initialize Full Width Map
-      function initFullMap() {
-        const location = { lat: 11.1471, lng: 78.1441 };
-        const fullMap = new google.maps.Map(document.getElementById('full-map'), {
-          zoom: 15,
-          center: location,
-          mapTypeControl: true,
-          fullscreenControl: true,
-          streetViewControl: true
-        });
-        
-        const marker = new google.maps.Marker({
-          position: location,
-          map: fullMap,
-          title: 'MMR complex chinnathirupathu salem 636008'
-        });
-
-        const infowindow = new google.maps.InfoWindow({
-          content: '<div><strong>Our Location</strong><p>MMR complex<br>Chinnathirupathu<br>Salem 636008</p></div>'
-        });
-        
-        marker.addListener('click', function() {
-          infowindow.open(fullMap, marker);
-        });
-      }
-
-      // Initialize maps when page loads
-      document.addEventListener('DOMContentLoaded', function() {
-        initContactMap();
-        initFullMap();
-      });
-    </script>
   </body>
 </html>
